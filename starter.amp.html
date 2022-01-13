@@ -1,0 +1,126 @@
+<html amp lang="en">
+  <head>
+    <!-- <meta charset="utf-8"> -->
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>Hello, AMPs</title>
+    <link rel="canonical" href="/starter.amp.html">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+    <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+        h1 {
+
+          padding:.5rem;
+          font-weight: 600;
+          font-size: 1.5rem;
+          /* background-color: rgb(216, 216, 216); */
+          border-bottom: .1rem solid rgb(238, 238, 238) ;
+          box-shadow: .01rem .07rem .8rem rgb(230, 230, 230);
+          color:rgb(78, 70, 100);
+        }
+         body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .carousel{
+            /* margin-top: -5.2rem; */
+        }
+        #list{
+          display: flex;
+          padding:.5rem;
+          margin-top: -1rem;
+          width:75%;
+        }
+        #list li {
+          list-style: none;
+          padding:1rem;
+          font-size: .9rem;
+          color:rgb(61, 61, 61);
+          
+        }
+        #list li:hover{
+          font-weight: 800;
+          cursor: pointer;
+          border-bottom: .1rem solid rgb(163, 163, 163);
+        }
+        button{
+          outline: none;
+          background-color: #fff;
+          border: none;
+          font-size: 1.3rem;
+          padding: .5rem;
+          margin-left: 1rem;
+          color:rgb(44, 44, 44);
+          font-weight: 700;
+          width:15%;
+          cursor: pointer;
+          height: 40px;
+         
+          
+        }
+        button:hover{
+          border-bottom: .1rem solid rgb(163, 163, 163);
+        }
+        .category_tab{
+          display: flex;
+          width:90%;
+          margin:1rem auto;
+          padding:1rem;
+          justify-content: space-between;
+          height: 80px;
+          
+        }
+      </style>
+</head>
+  <body>
+    <h1 id="hello">Movies List</h1>
+    <!-- image tag -->
+
+    <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400" ></amp-img>
+
+    <!-- image responsive -->
+     <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400"  layout="responsive" ></amp-img>
+   
+    <amp-img src="https://source.unsplash.com/Ji_G7Bu1MoM/600x400" height="400" layout="fixed-height"></amp-img>
+    
+<!-- carousel -->
+    <amp-base-carousel loop="true"  width="600" height="400" layout="responsive" class="carousel">
+        <amp-img src="https://wallpaperbat.com/img/51497-harry-potter-4k-ultra-hd.jpg" width="600" height="400" layout="responsive"></amp-img>
+        <amp-img src="https://wallpaperbat.com/img/231202-avengers-endgame-wallpaper169-tried-my-best-marvelstudios.png" width="600" height="400" layout="responsive"></amp-img>
+        <amp-img src="https://wallpaperbat.com/img/231202-avengers-endgame-wallpaper169-tried-my-best-marvelstudios.png" width="600" height="400" layout="responsive"></amp-img>
+    </amp-base-carousel>
+   
+    <div class="category_tab">
+      <!-- <button on =" tap:list.toggleVisibility ">
+        Categories
+      </button> -->
+      <button>
+        Categories
+      </button>
+      <!-- <ul id="list" hidden >
+            <li>Action</li>
+            <li>Comedy</li>
+            <li>Horror</li>
+            <li>Romantic</li>
+            <li>Sci-fi</li>
+            <li>Animation</li>
+            <li>Crime</li>
+            <li>Thriller</li>
+            <li>Drama</li>
+      </ul> -->
+      <ul id="list"  >
+        <li>Action</li>
+        <li>Comedy</li>
+        <li>Horror</li>
+        <li>Romantic</li>
+        <li>Sci-fi</li>
+        <li>Animation</li>
+        <li>Crime</li>
+        <li>Thriller</li>
+        <li>Drama</li>
+  </ul>
+    </div>
+    
+  </body>
+</html>

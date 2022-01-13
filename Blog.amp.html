@@ -1,0 +1,228 @@
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>Hello, AMPs</title>
+    <link rel="canonical" href="/starter.amp.html">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+   
+    <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+   
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  
+    <style amp-custom>
+        body{
+            font-family: 'Poppins', sans-serif;
+        }
+        h1 {
+        padding:.5rem;
+        font-weight: 600;
+        font-size: 1.5rem;
+        /* background-color: rgb(216, 216, 216); */
+        border-bottom: .1rem solid rgb(238, 238, 238) ;
+        box-shadow: .01rem .07rem .8rem rgb(230, 230, 230);
+        color:rgb(78, 70, 100);
+    }
+    .header_div{
+        margin:1rem auto;
+        width:90%;
+    }
+    h4{
+        border-bottom: .1rem solid gray;
+        width:10%;
+    }
+    h4:hover{
+        padding-left: .5rem;
+        cursor: pointer;
+        transition: .1s linear ;
+    }
+    h4:hover::after{
+        content: ">";
+        padding-left: .5rem;
+        color: indigo;
+
+    }
+    .img_h{
+        width:40%;
+       margin:1rem auto;
+    }
+    .desc_header{
+        width:70%;
+       margin:1rem auto;
+    }
+    .carousel{
+        width:70%;
+        margin: 1rem auto;
+    }
+    .carosel_image{
+        width:20%;
+       margin:1rem auto;
+    }
+    p{
+        color:rgb(41, 41, 41);
+        font-size: .9rem;
+    }
+    form{
+        width:60%;
+        font-family: 'Montserrat', sans-serif;
+    }
+    fieldset{
+        border: .01rem solid rgb(202, 202, 202);
+        border-radius: .5rem;
+        padding: 2rem;
+    }
+    input ,textarea{
+        border: .1rem solid gray;
+        border-radius: .2rem;
+        padding: .7rem 1rem;
+        width: 70%;
+        color: rgb(65, 64, 64);
+        margin:1rem 0rem;
+        
+        
+    }
+    input[type="submit"]{
+        width:30%;
+        font-weight: 600;
+        background-color:rgb(78, 70, 100) ;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+    input[type="submit"]:hover{
+        background-color:rgb(70, 57, 105) ;
+    }
+    .user_schen{
+        display: flex;
+        justify-content: space-between;
+    }
+    .user_card{
+        width: 20%;
+        display: flex;
+        padding: 1.4rem;
+        border: .09rem solid rgb(247, 247, 247);
+        height: 15%;
+    }
+    .detals_tab{
+        display: flex;
+        justify-content: space-between;
+    }
+    </style>
+</head>
+  <body>
+    <h1 id="hello">Blog</h1>
+    <div class="header_div">
+        <h4>Travel</h4>    
+        <amp-img src="https://www.kevmrc.com/wp-content/uploads/2016/12/crater-in-mount-etna-sicily-italy.jpg" width="200" height="150" class="img_h"  layout="responsive" ></amp-img>
+        <div class="desc_header">
+            <h2>Sicily, Italy Known for Mount Etna, the biggest active volcano in Europe. </h2>
+            <p>The tallest active volcano in Europe is Mount Etna, in Sicily, But there are also several other volcanoes on the island.More than 85% of the island is made of hills & mountains also Sicily is the biggest island in the Mediterranean Sea. </p>
+            <p>Sicily has it own languWhile Italian is the official language in Sicily, the locals speak another language: Sicilian.
+                Sicilian is considered as a distinct language, and has been recognized as such by the UNESCO. The language has origins from a wide variety of other languages: Latin, Greek, Spanish, French, Catalan, Provençal and Arabic.age,</p>
+            <p>The sonnet was invented in Sicily
+                A sonnet is a poem with 14 lines, following a specific rhyme scheme; it’s a popular form a poetry, used by Michelangelo, Shakespeare and Edgar Allan Poe for example.   
+                The sonnet comes from the Italian word sonetto, meaning little poem. It was invented in Sicily by Giacomo da Lentini, in the 13th century.
+            </p>
+
+        </div>
+        <amp-base-carousel loop="true"  width="600" height="400" layout="responsive" class="carousel">
+            <amp-img class="carosel_image" src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Ftrevornace%2Ffiles%2F2017%2F03%2Fmount-etna.jpg" width="600" height="400" layout="responsive"></amp-img>
+            <amp-img class="carosel_image" src="https://images.firstpost.com/wp-content/uploads/2021/02/AP21048446113737-1.jpg" width="600" height="400" layout="responsive"></amp-img>
+            <amp-img class="carosel_image" src="https://www.oddizzi.com/wp-content/uploads/2011/02/img-volcanoes-regalbuto-etna.jpg" width="600" height="400" layout="responsive"></amp-img>
+            <amp-img class="carosel_image" src="http://thenextsunset.com/wp-content/uploads/2019/05/Mount-Etna-86.jpg" width="600" height="400" layout="responsive"></amp-img>
+        </amp-base-carousel>
+        <h2>Now time to turn the pages backward and relieve the past </h2>
+        <p>Located near the east coast of Italy’s province of Sicily, Mount Etna is Europe’s most active volcano and is one of the world’s largest continental volcanoes, standing about 3,350 m (10,991 feet) tall. Mount Etna has a broad base (or shield) spanning roughly 60 by 40 km (36 by 24 miles) and reaching an altitude of about 2,900 m (9,500 feet). The remaining 400 m (1,200 feet) at its top is a stratovolcano made from several vents that have coalesced.
+            Most of the surface of Mount Etna is covered by historic lava flows dating back to eruptions as old as 300,000 years. Scientists believe Mount Etna started as a submarine volcano that gradually grew to stand above sea level on layer upon layer of solidified lava.
+        </p>
+        <p>Scientists believe Mount Etna started as a submarine volcano that gradually grew to stand above sea level on layer upon layer of solidified lava. ... That eruption was accompanied by earthquakes and the opening of at least five vents on the volcano that released thick lava flows and vast columns of steam and smoke.</p>
+        <p>Mount Etna, towering above the Mediterranean island of Sicily, has been experiencing a busy season this year and saw its latest eruption on Sunday (Aug. 29)</p>
+        
+        <h3>Some more facts to know </h3>
+        <p> 1. The Roman God of Fire lived on Mount Etna.</p>
+        <p> 2. Mount Etna's biggest eruption killed 20,000 people.</p>
+        <p> 3. Almost three-quarters of Sicily's crops are grown around Mount Etna.</p>
+        <p> 4. Mount Etna is part of a National Park.</p>
+        <p> 5. Mount Etna, Latin Aetna, Sicilian Mongibello, active volcano on the east coast of Sicily. The name comes from the Greek Aitne, from aithō, “I burn.” Mount Etna is the highest active volcano in Europe, its topmost elevation being about 10,900 feet (3,320 metres).</p>
+        <h3>Leave your Comment</h3>
+        <div class="user_schen">
+            <form method="post"action-xhr="/documentation/examples/api/submit-form-input-text-xhr"  target="_top">
+                <fieldset>
+                    <div>
+                        <label>
+                            <span> Your Name:</span>
+                        </label>
+                        <br>
+                        <input type="text"
+                        name="name"
+                        required placeholder="xyz">
+                    </div>
+                 <br >
+                    <div>
+                        <label>
+                            <span> Email:</span>
+                        </label>
+                        <br>
+                        <input type="email"
+                        name="email"
+                        required placeholder="xyz@gmail.com">
+                    </div>
+                  <br>
+                  <div>
+                    <label>
+                        <span>Message:</span>   
+                    </label>
+                    <br>
+                    <textarea rows="6" cols="6" placeholder="Write your message ..... " ></textarea>
+                    <br>
+                    <input type="submit"
+                      value="Send">
+                  </div>
+                  
+                 
+                </fieldset>
+                <div submit-success>
+                    <template type="amp-mustache">
+                      Success! Thanks {{name}} for sending your valuable comment. 
+                    </template>
+                  </div>
+                  <div submit-error>
+                    <template type="amp-mustache">
+                      Error! sending the message
+                    </template>
+                  </div>
+                <!-- <div submit-success>
+                  <template type="amp-mustache">
+                    Subscription successful!
+                  </template>
+                </div>
+                <div submit-error>
+                  <template type="amp-mustache">
+                    Subscription failed!
+                  </template>
+                </div> -->
+              </form>
+
+
+              
+              <div class="user_card">
+                  <div class="card_body">
+                    <amp-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVkEgWml5fPBeNtfwwI2_RkWCWE5dRUW9Riw&usqp=CAU" width="50" height="50" ></amp-img>
+                     <h4>Mukul_blog872</h4> 
+                     <div class="detals_tab">
+                         <h4>Blogs 12 </h4>
+                         <h4>followers 44 </h4>
+                     </div>
+                  </div>
+              </div>
+        </div>
+      
+    </div>
+    
+  </body>
+</html>

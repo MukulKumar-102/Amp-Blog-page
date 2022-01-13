@@ -1,0 +1,8 @@
+#include an image in amp page
+    <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400"></amp-img>
+   
+   #1 Responsive image 
+        by adding layout ="responsive"
+
+    <amp-img src="https://source.unsplash.com/Ji_G7Bu1MoM/600x400" width="600" height="400" layout="responsive"></amp-img>
+    
