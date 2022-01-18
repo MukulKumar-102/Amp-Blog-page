@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html amp lang="en">
   <head>
     <meta charset="utf-8">
@@ -6,6 +7,7 @@
     <link rel="canonical" href="/starter.amp.html">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
    
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
@@ -18,15 +20,43 @@
         body{
             font-family: 'Poppins', sans-serif;
         }
-        h1 {
-        padding:.5rem;
+
+        nav {
+        padding:.2rem;
         font-weight: 600;
-        font-size: 1.5rem;
-        /* background-color: rgb(216, 216, 216); */
+        font-size: 1rem;
         border-bottom: .1rem solid rgb(238, 238, 238) ;
         box-shadow: .01rem .07rem .8rem rgb(230, 230, 230);
         color:rgb(78, 70, 100);
+        display: flex;
+        justify-content: space-between;
+        color: #0f6da9;
+        
     }
+    nav button{
+        border:none;
+        background-color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: 'Poppins';
+        color: #7078b2;
+        
+
+    }
+    .sample-sidebar{
+        background-color: rgb(41, 41, 41);
+        width: 15%;
+        color: #b0b7eb;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem ;
+    }
+    .sample-sidebar a{
+        padding: 1.1rem;
+        cursor: pointer;
+        
+    }
+
     .header_div{
         margin:1rem auto;
         width:90%;
@@ -115,7 +145,21 @@
     </style>
 </head>
   <body>
-    <h1 id="hello">Blog</h1>
+      <nav>
+        <h1 id="hello">Blog</h1>
+        <button on="tap:sidebar.toggle">Categories</button>
+        
+      </nav>
+   
+      <!-- <amp-img src ="http://assets.stickpng.com/images/588a6507d06f6719692a2d15.png" width="50" height="50"layout="responsive" ></amp-img> -->
+    <amp-sidebar id="sidebar" class="sample-sidebar" layout="nodisplay" side="right">
+        <!-- <a on="tap:sidebar.toggle">Close </a> -->
+        <a>Travel</a>
+        <a>Food</a>
+        <a>Sports</a>
+        <a>Health and welfare</a>
+        <a>Lifestyle</a>
+      </amp-sidebar>
     <div class="header_div">
         <h4>Travel</h4>    
         <amp-img src="https://www.kevmrc.com/wp-content/uploads/2016/12/crater-in-mount-etna-sicily-italy.jpg" width="200" height="150" class="img_h"  layout="responsive" ></amp-img>

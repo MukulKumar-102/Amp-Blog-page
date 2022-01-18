@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+    <!-- <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script> -->
+    <title>Hello, AMPs</title>
+    <link rel="canonical" href="/starter.amp.html">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+        header{
+            background: linear-gradient(to top, #ff0066 44%, #ff0066 100%);
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .top_header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1rem 3.8rem  ;
+            color: white;
+            font-family: 'Poppins';
+        }
+        .logo{
+            width: 140px;
+            height: 45px;
+        }
+        .mail{
+            outline: none;
+            background: linear-gradient(to top, #ff0066 44%, #ff0066 100%);
+            width:20%;
+            color:#fff;
+            font-weight: 600;
+            font-size: .9rem;
+            border: none;
+            font-family: sans-serif;
+        }
+
+/* todo */
+.button_wrapper {display: flex;align-items: center;justify-content: center;height: 100vh; width: 100%;flex-direction: column;}
+    .button_wrapper button {padding: 20px 50px;background-color: #000; border: 0;color: #fff;cursor: pointer;margin-bottom: 20px;}
+
+    /*Modal CSS starts here*/
+            .modal_wrap {position: fixed; top: 0; left: 0;height: 100%; width: 100%;}
+            .modal_overlay {background: rgba(0,0,0,.8);width: 100%;height: 100%;position: absolute;}
+            .modal {background: #fff;position: absolute;width: 600px;top: 50%;left: 50%;border-radius: 9px;transform: translate(-50%,-50%);}
+            .close 
+            {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 3.8rem;
+                font-weight: 600;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                color: black;
+                cursor: pointer;
+            }
+            .modal .modal_heading {
+                padding: 10px 30px 7px;
+                font-weight: bold;
+                margin:1rem;
+                font-size: 1.2rem;
+                font-family: sans-serif;
+            }
+            .modal .modal_body {
+                padding: 0 25px 25px;
+                margin:1rem;
+            }
+            .modal .modal_body p {font-size: 1rem;line-height: 1.6;}
+            .form-body{
+                width:92%;
+            }
+            .form_input{
+                width:90%;
+                padding: .8rem;
+                margin:.5rem 0rem;
+                font-size: .7rem;
+                outline: rgb(37, 37, 37);
+                
+            }
+            .form_btn{
+                background:#aa1972 ;
+                border: none;
+                color:#fff;
+                width:97%;
+            }
+/* todo */
+
+        .banner{
+            text-align: center;
+            font-weight: 700;
+            color: #fff;
+            font-size: 2rem;
+            font-family: 'Poppins';
+            
+        }
+        .bannerbtn{
+            text-align: center;
+            width: 30%;
+            margin: 1rem auto;
+
+            
+        }
+        .bannerbtn button{
+            font-size: 1.1rem;
+            padding: 1rem;
+            background-color: rgb(46, 46, 46);
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            font-weight: 700;
+            border-radius: .2rem;
+        }
+
+        .mid{
+            background-color: rgb(57, 57, 161);
+            color: #fff;
+            padding: 2rem;
+            margin: 2rem 0rem ;
+        }
+        .mid-acessel{
+            background: linear-gradient(to top, #ff0066 44%, #ff0066 100%);
+            margin-top: -.05rem;
+        }
+        .mid h3{
+            text-align: center;
+            font-weight: 700;
+            font-size: 2.5rem;
+            width: 70%;
+            margin: 4rem  auto;
+            font-family: 'Poppins';
+        }
+        .company_tr,.company_tr_reverse{
+            width:97%;
+            display: flex;
+            justify-content: space-around;
+            margin: 1rem auto;
+            
+            
+        }
+        .company_tr{
+            animation: mymove 5s infinite;
+        }
+        .company_tr_reverse{
+            animation: reversemymove 5s infinite;
+        }
+        .company_logos{
+            width:9%;
+            height: 28px;
+            margin: .5rem;
+            
+            /* padding: 50px 0px;
+            background: linear-gradient(180deg, #DC1871 3.56%, #FF0055 100%); */
+        }
+        .amp-carousel-button-prev,.amp-carousel-button-next{
+            /* background-color: rgb(231, 231, 231); */
+            border-radius: 50%;
+            outline: none;
+            
+            
+            
+        }
+        .slide1{
+            margin:5rem ;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .card {
+            /* background: url("./assest/huupe-img.webp"); */
+            width:47%;
+            margin: 1rem  auto;
+
+        }
+        .slide_full{
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            /* background-image: url('https://uiux.99xstartup.com/assest/q-1.webp'); */
+        }
+        #slide_full_1{
+            background-image: url('https://uiux.99xstartup.com/assest/q-1.webp');
+        }
+        #slide_full_2{
+            background-image: url('https://uiux.99xstartup.com/assest/q-2.webp');
+        }
+        #slide_full_3{
+            background-image: url('https://uiux.99xstartup.com/assest/q-3.webp');
+        }
+        #slide_full_4{
+            background-image: url('https://uiux.99xstartup.com/assest/q-4.webp');
+        }
+        #slide_full_5{
+            background-image: url('https://uiux.99xstartup.com/assest/q-5.webp');
+        }
+
+        .white,.data_text_header{
+            color: #fff;
+            font-size: 3.25rem;
+            /* letter-spacing: .1rem; */
+            /* font-family: "Roboto"; */
+            font-family: sans-serif;
+            margin:4.5rem auto;
+            width: 75%;
+        }
+        .data_desc{
+        margin:0px 00px 50px 80px;
+        max-width: 700px;
+    }
+        .pink-text{
+            color:rgb(160, 6, 83);
+            font-size:2.5rem;
+            
+        }
+        .feature-desc{
+            font-size: 20px;
+            line-height: 30px;
+            margin: 40px 0px;
+            margin-left: 90px;
+
+
+        }
+
+        .sub_header{
+            text-align: center;
+            font-family:'Roboto';
+            font-size: 2.2rem;
+        }
+        /* .amp-carousel-button-prev {
+          background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="%23fff"%3E%3Cpath d="M15 8.25H5.87l4.19-4.19L9 3 3 9l6 6 1.06-1.06-4.19-4.19H15v-1.5z"/%3E%3C/svg%3E');
+        } */
+        .testimonial{
+            display: flex;
+            margin-top: -2rem;
+        }
+        .testimonial_carousel{
+            width:40%;
+            margin: 1rem auto;
+            font-family: "Roboto";
+
+        }
+        .user_details{
+            width:90%;
+
+        }
+        .user_text{
+           display: flex;
+            margin: 3rem  5rem;
+            width: 90%;
+            
+        }
+        .user_text_img{
+            width:15%;
+            height: 65px;
+            border-radius: 50%;
+        }
+        .user_text_line{
+            
+            width: 11%;
+            height: 1.2px;
+            margin: 2rem 1rem;
+            
+        }
+        .about_user{
+            height: 60px;
+            font-size: .8rem;
+            margin-left: .5rem;
+            /* display: flex;
+            flex-direction: column; */
+        }
+        .user_company{
+            width:90%;
+            height: 18px;
+            margin-top: -.5rem;
+        }
+        
+        .text-desc{
+            width: 600px; height: 350px; background: linear-gradient(to top, #d63882 44%, #ff0066 100%); color: #FFF;
+            font-family: 'Roboto';
+            font-size: 2rem;
+            /* display: flex;
+            flex-direction: column; */
+            
+            padding: 1.2rem;
+        }
+        .text-desc >p{
+            width: 63%;
+            /* background-color: khaki; */
+            font-weight: 700;
+            margin:6rem 1rem;
+            letter-spacing: .1rem;
+        }
+
+      </style>
+</head>
+  <body>
+    <header>
+        <div class="top_header">
+            <a href="https://www.99xstartup.com"  class="logo">
+                <amp-img  src="https://uiux.99xstartup.com/assest/99.webp" class="logo"  alt ="logo" width="200" height="200" layout="responsive" ></amp-img>
+            </a>
+                              
+            <button class="mail">
+                <span>business@99x.network</span>
+            </button>
+        </div>
+        <div class="banner">
+            <h1>Build Websites </h1>
+            <h1>that users fall in love with</h1>
+        </div>
+        <div class="bannerbtn" >
+            <button on="tap:popup" on="tap:popup" role="button">Schedule a meet</button>
+        </div>
+        <amp-lightbox id="popup" layout="nodisplay">
+            <div class="modal_wrap" class="lightbox">
+                <div class="modal_overlay" on="tap:popup.close" role="button"></div>
+        
+                <div class="modal">
+                    <span class="close" on="tap:popup.close" role="button">&times;</span>
+                    <div class="modal_heading"><h1>Drop in your details,We"ll get back soon!</h1></div>
+                    <div class="modal_body">
+                        <form method="post" class="form-body" action-xhr="https://example.com/subscribe"    target="_top">
+                            
+                           
+                               
+                                <input type="text"
+                                name="name"
+                                required autocomplete="off" class="form_input" placeholder="Enter your name">
+                            
+                            <br>
+                           
+                                
+                                <input type="email"
+                                name="email"
+                                autocomplete="off"
+                                required class="form_input" placeholder="Enter your Email">
+                                <br>
+                                <input type="tel"
+                                name="phone"
+                                autocomplete="off"
+                                required class="form_input" placeholder="Enter your phone number">
+                            
+                            <br>
+                                <button type="submit"class="form_input form_btn" >Continue</button>
+                            
+   
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </amp-lightbox>
+
+    </header>
+    <!-- <amp-video width="480" height="270" src="https://uiux.99xstartup.com/assest/UIX-Hero.webm"  layout="responsive"  autoplay></amp-video> -->
+
+    <div class="mid mid-acessel">
+        <h3>
+            Trusted by over 70+ Companies
+        </h3>
+        
+        <!-- <h1>Hello World!</h1>
+        <h1>Hello World!</h1>
+        <h1 id="helloMe">Hello World!</h1>
+        <h1>Hello World!</h1>
+          <button on="tap:animateThis.start">start</button> -->
+          <!-- <amp-animation layout="nodisplay" id="animateThis">
+            <script type="application/json">
+              {
+                "selector": ".company_tr",
+                "duration": "3s",
+                "fill": "both",
+                "keyframes": [
+                  {"transform": "translateX(0px)"},
+                  {"transform": "translateX(50%)"}
+                ],
+                "subtargets": [
+                  {
+                    "index": 1,
+                    "duration": "1s"
+                  },
+                  {
+                    "selector": "#helloMe",
+                    "direction": "reverse",
+                    "duration": "5s"
+                  }
+                ]
+              }
+            </script>
+          </amp-animation> -->
+          <style amp-keyframes>
+            @keyframes mymove {
+               0%   {transform: translatex(0px);}
+               25%  {transform: translatex(0px);}
+               75%  {transform: translatex(100px);}
+               100% {transform: translatex(200px);}
+             }
+           </style>
+            <style amp-keyframes>
+                @keyframes reversemymove {
+                   0%   {transform: translatex(100px);}
+                   25%  {transform: translatex(50px);}
+                   75%  {transform: translatex(200px);}
+                   100% {transform: translatex(0px);}
+                 }
+               </style>
+        <div class="company_tr">
+            <amp-img  class="company_logos"  src="https://uiux.99xstartup.com/assest/Expertrons%20_%20Website%201.webp" width="10" height="10" layout="responsive" ></amp-img>
+            <amp-img class="company_logos"  src="https://uiux.99xstartup.com/assest/Practo.webp" width="10" height="10" layout="responsive" ></amp-img>
+            <amp-img class="company_logos" src="https://uiux.99xstartup.com/assest/FAE.webp" width="10" height="10" layout="responsive" ></amp-img>
+            <amp-img class="company_logos" src="https://uiux.99xstartup.com/assest/Sru%20Project%20logo_black%203.webp" width="10" height="10" layout="responsive" ></amp-img>
+            <amp-img class="company_logos" src="https://uiux.99xstartup.com/assest/Moneyfactory.webp" width="10" height="10" layout="responsive" ></amp-img>
+            <amp-img class="company_logos" src="https://uiux.99xstartup.com/assest/MLT.webp" width="10" height="10" layout="responsive" ></amp-img>
+            <amp-img class="company_logos" src="https://uiux.99xstartup.com/assest/Huupe.webp" width="10" height="10" layout="responsive" ></amp-img>
+        </div>
+
+        <div class="company_tr_reverse">
+            <amp-img class="company_logos" src="https://uiux.99xstartup.com/assest/OTO.webp" width="10" height="10" layout="responsive" ></amp-img>
+            <amp-img class="company_logos" src="https://uiux.99xstartup.com/assest/Citi%20Venture.webp" width="50" height="50" layout="responsive" ></amp-img>
+            <amp-img class="company_logos" src="https://uiux.99xstartup.com/assest/SBNation%20Logo.webp" width="50" height="50" layout="responsive" ></amp-img>
+            <amp-img class="company_logos" src="https://uiux.99xstartup.com/assest/Kia%20Motors%20Logo.webp" width="50" height="50" layout="responsive" ></amp-img>
+            <amp-img class="company_logos" src="https://uiux.99xstartup.com/assest/Hard%20Rock%20Logo.webp" width="50" height="50" layout="responsive" ></amp-img>
+            <amp-img class="company_logos" src="https://uiux.99xstartup.com/assest/SunburnFestiveProperty%201.webp" width="50" height="50" layout="responsive" ></amp-img>
+            <amp-img class="company_logos" src="https://uiux.99xstartup.com/assest/Titan.webp" width="50" height="50" layout="responsive" ></amp-img>
+            <amp-img class="company_logos" src="https://uiux.99xstartup.com/assest/Viacom.webp" width="50" height="50" layout="responsive" ></amp-img>
+            <amp-img class="company_logos" src="https://uiux.99xstartup.com/assest/Amazon.webp" width="50" height="50" layout="responsive" ></amp-img>
+            <amp-img class="company_logos" src="https://uiux.99xstartup.com/assest/Fuse.webp" width="50" height="50" layout="responsive" ></amp-img>
+
+            
+            
+            
+        </div>
+
+
+
+    </div>
+  
+  <!-- excetional work carousel -->
+
+    <amp-carousel width="200" height="100" layout="responsive" type="slides"  delay="2000" role="region" aria-label="Carousel with autoplay">
+
+        <div class="slide_full" id ="slide_full_1">
+             <div> 
+                <h2 class=" white">How we deliver <br /> exceptional work?</h2>
+              </div>
+            <div class="data_desc">
+                <h3 class="data_text_header pink-text">DISCOVERY
+                </h3>
+                <p class="white feature-desc">
+                  A Series of Interactive sessions with the team and the stakeholders where we
+                  come together to share ideas, discuss details to take your notion to final
+                  product.
+                </p>
+                <h4 class="white">Timeline: 3-5 Days</h4>
+              </div>
+            </div>
+        </div>
+        <div class="slide_full" id ="slide_full_2">
+            <amp-img src="https://uiux.99xstartup.com/assest/q-2.webp" width="50" height="50"  layout="responsive" ></amp-img>
+             <div> 
+                <h2 class=" white">How we deliver <br /> exceptional work?</h2>
+              </div>
+            <div class="data_desc">
+                <h3 class="data_text_header pink-text">UX & MARKET RESEARCH </h3>
+                <p class="white feature-desc">
+                  Every project starts with a mix of quantitive and qualitative analysis. We take
+                  a look at your industry, market and competition to get a holistic outlook what's
+                  working and how we could do better.
+                </p>
+                <h4>Timeline: 1 - 2 Weeks</h4>
+              </div>
+            </div> 
+         </div> 
+         <div class="slide_full" id ="slide_full_3"> 
+             <div>
+                <h2 class=" white">How we deliver <br /> exceptional work?</h2>
+              </div>
+            <div class="data_desc">
+                <h3 class="data_text_header pink-text">INFORMATION ARCHITECTURE</h3>
+                <p class="white feature-desc">
+                  We build a blueprint, with ideas, flows, interaction patterns, sketches. This
+                  decides how we move the project ahead, right from weekly deliveries to the plan
+                  is decided based on this.
+                </p>
+                <h4>Timeline: 1 Week</h4>
+              </div>
+            </div>
+        </div>
+        <div class="slide_full" id ="slide_full_4"> 
+             <div>
+                <h2 class=" white">How we deliver <br /> exceptional work?</h2>
+              </div>
+            <div class="data_desc">
+                <h3 class="data_text_header pink-text">LOW-FIDELITY WIREFRAMES</h3>
+                <p class="white feature-desc">
+                  A rough skeletal version imagined with the stakeholders, journey maps, and user
+                  flows. We take your idea and build the ideal flow based on the information
+                  architecture and insights.
+                </p>
+                <h4>Timeline: 1 Week - 1 Month</h4>
+              </div>
+            </div>
+        </div> 
+        <div class="slide_full" id ="slide_full_5">
+           
+             <div>
+                <h2 class="white">How we deliver <br /> exceptional work?</h2>
+              </div>
+            <div class="data_desc">
+                <h3 class="data_text_header pink-text">UI SCREENS + MOCKUPS</h3>
+                <p class="white feature-desc">
+                  The Final stage - the screens are built around a design system, a universal
+                  system that can be used by developers and designers to create and prototype on
+                  the go.
+                </p>
+                <h4>Timeline: 1 Week - 1 Month</h4>
+              </div> 
+    
+             </div>
+        </div>
+    </amp-carousel> 
+
+  <!-- excetional work carousel -->
+
+    <section class="sub_header">
+        <h2>Some of our latest work!</h2>
+    </section> 
+
+    <amp-carousel width="400" height="400" layout="responsive" type="slides"  delay="2000" role="region" aria-label="Carousel with autoplay">
+        <div class="slide1">
+            <div class="card">
+                <amp-img src="https://uiux.99xstartup.com/assest/huupe-img.webp" width="50" height="50"  layout="responsive" ></amp-img>
+                <h4>sdsds</h4>
+            </div>
+            <div class="card">
+                <amp-img src="https://uiux.99xstartup.com/assest/gotissue.webp" width="50" height="50"  layout="responsive" ></amp-img>
+                <h4>sdsds</h4>
+            </div>
+
+            <div class="card">
+                <amp-img src="https://uiux.99xstartup.com/assest/mob.webp" width="50" height="50"  layout="responsive" ></amp-img>
+                <h4>sdsds</h4>
+            </div>
+            <div class="card">
+                <amp-img src="https://uiux.99xstartup.com/assest/health.webp" width="50" height="50"  layout="responsive" ></amp-img>
+                <h4>sdsds</h4>
+            </div>
+
+        </div>
+        <div class="slide1">
+            <div class="card">
+                <amp-img src="https://uiux.99xstartup.com/assest/kickpick.webp" width="50" height="50"  layout="responsive" ></amp-img>
+                <h4>sdsds</h4>
+            <!-- </div> -->
+            <div class="card">
+                <amp-img src="https://uiux.99xstartup.com/assest/insurence.webp" width="50" height="50"  layout="responsive" ></amp-img>
+                <h4>sdsds</h4>
+            </div>
+            <div class="card">
+                <amp-img src="https://uiux.99xstartup.com/assest/alivio.webp" width="50" height="50"  layout="responsive" ></amp-img>
+                <h4>sdsds</h4>
+            </div>
+            <div class="card">
+                <amp-img src="https://uiux.99xstartup.com/assest/oto%20capital.webp" width="50" height="50"  layout="responsive" ></amp-img>
+                <h4>sdsds</h4>
+            </div>
+
+        </div>
+        <div class="slide1">
+            <div class="card">
+                <amp-img src="https://uiux.99xstartup.com/assest/new.jpeg" width="50" height="50"  layout="responsive" ></amp-img>
+                <h4>sdsds</h4>
+            </div>
+            <div class="card">
+                <amp-img src="https://uiux.99xstartup.com/assest/gausemann.webp" width="50" height="50"  layout="responsive" ></amp-img>
+                <h4>sdsds</h4>
+            </div>
+            <div class="card">
+                <amp-img src="https://uiux.99xstartup.com/assest/intute.webp" width="50" height="50"  layout="responsive" ></amp-img>
+                <h4>sdsds</h4>
+            </div>
+            <div class="card">
+                <amp-img src="https://uiux.99xstartup.com/assest/consilium.webp" width="50" height="50"  layout="responsive" ></amp-img>
+                <h4>sdsds</h4>
+            </div>
+
+        </div>
+
+      </amp-carousel> -->
+    <section class="mid">
+        <h3>Ready to build products and experiences,
+            people love?
+        </h3>
+        <div class="bannerbtn" >
+            <button on="tap:popup" on="tap:popup" role="button">Schedule a meet</button>
+        </div>
+
+    </section>
+     <section class="testimonial">
+        <div class="text-desc" >
+            <p >
+                Don't just take our word
+                for it, see for yourself
+                what our clients think
+                about us.
+            </p>
+          </div>
+          <amp-carousel class="testimonial_carousel" autoplay width="50" height="36" layout="responsive" type="slides"  delay="2000" role="region" aria-label="Carousel with autoplay">
+            <div class="user_details">
+                <p> 99x is probably the best UI/UX Design studio we've worked
+                    with. Apart from being highly creative and professional, the
+                    team brought an approach we hadn't seen before. Always focused
+                    on data &amp; results, 99x had us work our concepts and vision
+                    backwards; designing for outcome.
+                </p>
+                <div class="user_text">
+                    <amp-img  class="user_text_line"   src="https://uiux.99xstartup.com/assest/line.webp" width="10" height="10" layout="responsive" ></amp-img> 
+                    <amp-img class="user_text_img"    src="https://uiux.99xstartup.com/assest/img-1(1).webp" width="10" height="10" layout="responsive" ></amp-img> 
+                    <div class="about_user">
+                        <strong>Kevin Cornwell,</strong>
+                        <p>Chief Marketing Officer</p>
+                        <amp-img class="user_company"   src="https://uiux.99xstartup.com/assest/encore.png" width="10" height="10" layout="responsive" ></amp-img> 
+                        
+                    </div>
+                    
+
+                </div>
+            </div>    
+            <div class="user_details">
+                    <p> We recently worked with 99x on executing a new branding
+                        campaign from the ground up. 99x surpassed our expectations,
+                        and then some. They are highly professional and creative, the
+                        team has been responsive throughout the entire project; each
+                        and everything was meticulously planned out from initial stage
+                        to the final delivery.
+                    </p>
+                    <div class="user_text">
+                        <amp-img class="user_text_line"  src="https://uiux.99xstartup.com/assest/line.webp" width="10" height="10" layout="responsive" ></amp-img> 
+                        <amp-img class="user_text_img"   src="https://uiux.99xstartup.com/assest/img-2(1).webp" width="10" height="10" layout="responsive" ></amp-img> 
+                        <div class="about_user">
+                            <strong>Pamela Sidco,</strong>
+                            <p>Head of Product &amp; UX</p>
+                            <amp-img  class="user_company"   src="https://uiux.99xstartup.com/assest/gauseman.png" width="10" height="10" layout="responsive" ></amp-img> 
+                            
+                        </div>
+                        
+
+                    </div>
+                </div>
+                <div class="user_details">
+                    <p> We cannot compliment 99x enough on the design and development
+                        of our new brand, They take the time to listen and understand
+                        the project brief and then through workshops completely
+                        transformed our idea into an solid identity. We hardly had to
+                        ask for any amends and completely fell in love with what they
+                        delivered from the get go.
+                    </p>
+                    <div class="user_text">
+                        <amp-img  class="user_text_line" src="https://uiux.99xstartup.com/assest/line.webp" width="10" height="10" layout="responsive" ></amp-img> 
+                        <amp-img  class="user_text_img"  src="https://uiux.99xstartup.com/assest/img-3(1).webp" width="10" height="10" layout="responsive" ></amp-img> 
+                        <div class="about_user">
+                            <strong>Billy Kane,</strong>
+                            <p>VP of Marketing</p>
+                            <amp-img  class="user_company"   src="https://uiux.99xstartup.com/assest/t.png" width="10" height="10" layout="responsive" ></amp-img> 
+                            
+                        </div>
+                        
+
+                    </div>
+                </div>
+
+                         
+        </amp-carousel>
+
+    </section> 
+    
+  
+  </body>
+</html>
